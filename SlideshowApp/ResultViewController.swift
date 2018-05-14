@@ -11,9 +11,10 @@ import UIKit
 class ResultViewController: UIViewController
 {
     
+   
+    
     @IBOutlet weak var imageView: UIImageView!
     
-   
     var transimage: String!
     var image : UIImage!
     

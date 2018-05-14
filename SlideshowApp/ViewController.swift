@@ -111,6 +111,12 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.timer.invalidate()   // 現在のタイマーを破棄する
+        self.timer = nil          // startTimer() の timer == nil で判断するために、 timer = nil としておく
+        Next.isEnabled = true
+        Back.isEnabled = true
+        GoStop.setTitle("再生", for: .normal)
+        
         // segueから遷移先のResultViewControllerを取得する
         let resultViewController:ResultViewController = segue.destination as! ResultViewController
         let filename = imageNameArray[dispImageNo]
