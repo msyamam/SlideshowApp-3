@@ -111,7 +111,10 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if self.timer != nil {
         self.timer.invalidate()   // 現在のタイマーを破棄する
+        }
         self.timer = nil          // startTimer() の timer == nil で判断するために、 timer = nil としておく
         Next.isEnabled = true
         Back.isEnabled = true
